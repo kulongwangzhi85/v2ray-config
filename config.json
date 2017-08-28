@@ -34,7 +34,7 @@
       },
       "clients": [
         {
-          "id": "23ad6b10-8d1a-40f7-8ad0-e3e35cd38297",
+          "id": "xxx-xxx",
           "level": 1,
           "alterId": 32
         }
@@ -82,8 +82,8 @@
     "settings": {
       "clients": [
         {
-          "id": "23ad6b10-8d1a-40f7-8ad0-e3e35cd38296",
-          "level": 2,
+          "id": "xxxx-xxxxx-xxxxx",
+          "level": 1,
           "alterId": 64
         }
       ]
@@ -94,9 +94,9 @@
     "protocol": "shadowsocks",
     "settings": {
         "method": "chacha20",
-        "email": "guocl",
+        "email": "",
         "level": 1,
-        "password": "MWI5MGRjYz",
+        "password": "",
         "udp": true
     }
   }
