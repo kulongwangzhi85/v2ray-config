@@ -1,0 +1,87 @@
+{
+  "levels":{
+    "0": {
+        "bufferSize": 2048
+    }
+  },
+
+  "log" : {
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+
+  "dns": {
+    "servers": [
+        "8.8.8.8",
+	"74.82.42.42"
+    ]
+  },
+
+  "inbound":{
+    "port": 29901,
+    "protocol": "vmess",
+    "streamSettings": {
+    "network": "mkcp",
+    "kcpSettings": {
+        "uplinkCapacity": 20,
+        "downlinkCapacity": 100,
+        "congestion": true,
+        "readBufferSize": 4,
+        "writeBufferSize": 4,
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    "settings": {
+      "clients": [
+        {
+          "id": "xxx-uuid",
+          "level": 0,
+          "alterId": 32
+        }
+      ]
+    }
+   },
+  "outbound": {
+    "protocol": "freedom",
+    "settings": {
+        "domainStrategy": "UseIP",
+	"tag": "direct"
+    }
+  },
+  "routing": {
+    "strategy": "rules",
+    "settings": {
+      "rules": [
+	{
+	  "type": "field",
+          "outboundTag": "direct",
+          "domain": ["geosite:cn"]
+	},
+        {
+          "type": "field",
+          "ip": [
+            "0.0.0.0/8",
+            "10.0.0.0/8",
+            "100.64.0.0/10",
+            "127.0.0.0/8",
+            "169.254.0.0/16",
+            "172.16.0.0/12",
+            "192.0.0.0/24",
+            "192.0.2.0/24",
+            "192.168.0.0/16",
+            "198.18.0.0/15",
+            "198.51.100.0/24",
+            "203.0.113.0/24",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  }
+}
